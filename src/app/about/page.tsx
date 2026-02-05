@@ -6,24 +6,24 @@ import { User, MapPin, Calendar, Code, Shield, Target, Zap } from 'lucide-react'
 export default function AboutPage() {
   const timeline = [
     {
-      year: '2021',
+      year: '2023',
       title: 'Started Learning Cybersecurity',
       description: 'Began exploring web security, CTF challenges, and ethical hacking fundamentals.',
     },
     {
-      year: '2022',
-      title: 'First Bug Bounty Success',
-      description: 'Discovered and reported first critical vulnerability, earning recognition from major tech company.',
-    },
-    {
-      year: '2023',
-      title: 'Bug Bounty Hunter',
-      description: 'Active participation in HackerOne and Bugcrowd programs, multiple Hall of Fame entries.',
-    },
-    {
       year: '2024',
+      title: 'First Bug Bounty Success',
+      description: 'Discovered and reported first vulnerability, earning recognition.',
+    },
+    {
+      year: '2025',
+      title: 'Bug Bounty Hunter',
+      description: 'Active participation in bug bounty programs, achieved Hall of Fame on NASA, Jakarta.go.id, and more.',
+    },
+    {
+      year: '2026',
       title: 'Security Researcher',
-      description: 'Focused on advanced web exploitation techniques and responsible disclosure.',
+      description: 'Continuing to hunt bugs and contribute to web application security.',
     },
   ]
 

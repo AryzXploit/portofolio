@@ -43,10 +43,10 @@ export default function Home() {
   }, [charIndex, isDeleting, textIndex])
 
   const stats = [
-    { icon: Bug, value: '50+', label: 'Bugs Found' },
-    { icon: Shield, value: '20+', label: 'Hall of Fame' },
+    { icon: Bug, value: '10+', label: 'Bugs Found' },
+    { icon: Shield, value: '6', label: 'Hall of Fame' },
     { icon: Code, value: '3+', label: 'Years Experience' },
-    { icon: Award, value: '10+', label: 'CVEs Reported' },
+    { icon: Award, value: '5+', label: 'CTF Participated' },
   ]
 
   return (
