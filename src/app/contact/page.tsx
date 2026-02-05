@@ -1,8 +1,7 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, AlertCircle, CheckCircle, Clock, ShieldCheck } from 'lucide-react'
-import Turnstile from '@/components/Turnstile'
+import { useState, useEffect } from 'react'
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, AlertCircle, CheckCircle, Clock } from 'lucide-react'
 
 const RATE_LIMIT_KEY = 'contact_rate_limit'
 const RATE_LIMIT_COUNT_KEY = 'contact_count'
@@ -24,7 +23,6 @@ export default function ContactPage() {
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const [rateLimit, setRateLimit] = useState<RateLimitState>({
     isLocked: false,
     remainingTime: 0,
@@ -94,12 +92,6 @@ export default function ContactPage() {
       return
     }
 
-    if (!captchaToken) {
-      setErrorMessage('Please complete the captcha verification.')
-      setStatus('error')
-      return
-    }
-
     setStatus('loading')
 
     try {
@@ -145,19 +137,6 @@ export default function ContactPage() {
       setTimeout(() => setStatus('idle'), 5000)
     }
   }
-
-  const handleCaptchaVerify = useCallback((token: string) => {
-    setCaptchaToken(token)
-  }, [])
-
-  const handleCaptchaError = useCallback(() => {
-    setCaptchaToken(null)
-    setErrorMessage('Captcha verification failed. Please try again.')
-  }, [])
-
-  const handleCaptchaExpire = useCallback(() => {
-    setCaptchaToken(null)
-  }, [])
 
   const socialLinks = [
     { href: 'https://github.com/AryzXploit', icon: Github, label: 'GitHub', color: 'hover:text-white' },
@@ -311,25 +290,6 @@ export default function ContactPage() {
                   placeholder="Your message here..."
                   disabled={rateLimit.isLocked}
                 />
-              </div>
-
-              <div>
-                <label className="block text-sm font-mono text-gray-400 mb-2">
-                  <span className="text-cyber-green">$</span> verify <span className="text-cyber-red">*</span>
-                </label>
-                <div className="bg-dark-bg border border-dark-border rounded-lg p-4">
-                  <Turnstile
-                    onVerify={handleCaptchaVerify}
-                    onError={handleCaptchaError}
-                    onExpire={handleCaptchaExpire}
-                  />
-                  {captchaToken && (
-                    <div className="flex items-center justify-center text-cyber-green text-sm font-mono mt-2">
-                      <ShieldCheck className="w-4 h-4 mr-2" />
-                      Verified
-                    </div>
-                  )}
-                </div>
               </div>
 
               {status === 'error' && (
