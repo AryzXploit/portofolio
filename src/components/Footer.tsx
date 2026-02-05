@@ -5,7 +5,7 @@ const socialLinks = [
   { href: 'https://github.com/AryzXploit', icon: Github, label: 'GitHub' },
   { href: 'https://linkedin.com/in/aryaarjuna', icon: Linkedin, label: 'LinkedIn' },
   { href: 'https://twitter.com/AryzXploit', icon: Twitter, label: 'Twitter' },
-  { href: 'mailto:contact@arya.dev', icon: Mail, label: 'Email' },
+  { href: 'mailto:arjunaajalahla100@gmail.com', icon: Mail, label: 'Email' },
 ]
 
 export default function Footer() {

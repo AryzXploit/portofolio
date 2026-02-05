@@ -142,7 +142,7 @@ export default function ContactPage() {
     { href: 'https://github.com/AryzXploit', icon: Github, label: 'GitHub', color: 'hover:text-white' },
     { href: 'https://linkedin.com/in/aryaarjuna', icon: Linkedin, label: 'LinkedIn', color: 'hover:text-blue-500' },
     { href: 'https://twitter.com/AryzXploit', icon: Twitter, label: 'Twitter', color: 'hover:text-sky-400' },
-    { href: 'mailto:contact@arya.dev', icon: Mail, label: 'Email', color: 'hover:text-cyber-green' },
+    { href: 'mailto:arjunaajalahla100@gmail.com', icon: Mail, label: 'Email', color: 'hover:text-cyber-green' },
   ]
 
   return (
@@ -173,7 +173,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center text-gray-400">
                   <Mail className="w-5 h-5 text-cyber-green mr-3" />
-                  <span className="font-mono">contact@arya.dev</span>
+                  <span className="font-mono">arjunaajalahla100@gmail.com</span>
                 </div>
                 <div className="flex items-center text-gray-400">
                   <MapPin className="w-5 h-5 text-cyber-green mr-3" />
